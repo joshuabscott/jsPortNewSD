@@ -336,7 +336,7 @@
                                 <h2><a href="https://taco-cat.netlify.app/" target="_blank">Taco Cat</a></h2>
                             </header>
                             <div class="container">
-                                
+
                                 <!-- Trigger the modal with a button -->
                                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Taco Cat</button>
                                 <!-- Taco Cat Modal -->
@@ -370,7 +370,7 @@
                                 <h2><a href="https://fizzy-soda.netlify.app/" target="_blank">Fizz Buzz</a></h2>
                             </header>
                             <div class="container">
-                                
+
                                 <!-- Trigger the modal with a button -->
                                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Fizz Buzz</button>
                                 <!-- Fizz Buzz Modal -->
@@ -409,7 +409,7 @@
                             </header>
                             <!-- Sunset Hills Modal Example Example Example Example Example Example -->
                             <div class="container">
-                               
+
                                 <!-- Trigger the modal with a button -->
                                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Sunset Hills</button>
 
@@ -444,7 +444,7 @@
                             </header>
                             <!-- Sum of All Fears Modal Example Example Example Example Example Example -->
                             <div class="container">
-                                
+
                                 <!-- Trigger the modal with a button -->
                                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Sum of All Fears</button>
 
@@ -484,7 +484,7 @@
                             </header>
                             <!--Super Dog Modal Example Example Example Example Example Example -->
                             <div class="container">
-                                
+
                                 <!-- Trigger the modal with a button -->
                                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Super Dog</button>
 
@@ -519,7 +519,7 @@
                             </header>
                             <!--  Hotdog? Modal Modal Example Example Example Example Example Example -->
                             <div class="container">
-                                
+
                                 <!-- Trigger the modal with a button -->
                                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Hotdog?</button>
 
@@ -615,6 +615,8 @@
             </div>
         </section>
 
+
+
         <!-- Contact -->
         <section id="contact" class="four">
             <div class="container">
@@ -624,21 +626,33 @@
                 </header>
 
                 <p>
-                    Elementum sem parturient nulla quam placerat viverra
-                    mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
-                    donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
-                    orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.
+                    English words.
                 </p>
 
                 <form method="post" action="#">
                     <div class="row">
-                        <div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
-                        <div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
-                        <div class="col-12">
-                            <textarea name="message" placeholder="Message"></textarea>
+
+                        <div class="col-6 col-12-mobile">
+                            <input type="text" name="name" placeholder="Name" />
                         </div>
+
+                        <div class="col-6 col-12-mobile">
+                            <input type="email" name="email" placeholder="Email" />
+                        </div>
+
+                        <div class="col-12 col-12-mobile">
+                            <input type="text" name="subject" placeholder="Subject" />
+                        </div>
+
                         <div class="col-12">
-                            <input type="submit" value="Send Message" />
+                            <textarea name="message" placeholder="Message" rows="5"></textarea>
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn button-main button-scheme" id="contact-submit" type="submit">
+                                Send Message
+                            </button>
+                            <p class="contact-feedback"></p>
                         </div>
                     </div>
                 </form>
@@ -668,5 +682,32 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
+    <!-- Custom Form JavaScript for Contact form -->
+    <script>
+        const btn = document.getElementById('contact-submit');
+
+        document.querySelector("form")
+            .addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                btn.value = 'Sending...';
+
+                const serviceID = 'default_service';
+                const templateID = 'template_4vt1m1h';
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        btn.value = 'Send Email';
+                        Swal.fire(
+                            'Good News!',
+                            'Your email has been sent.',
+                            'success'
+                        )
+                    }, (err) => {
+                        btn.value = 'Send Email';
+                        alert(JSON.stringify(err));
+                    });
+            });
+    </script>
 </body>
 </html>
