@@ -180,6 +180,7 @@
     <Content Include="images\jsIconsBLK\SQL logo.png" />
     <Content Include="images\jsIconsBLK\SUPER DOG logo.PNG" />
     <Content Include="images\jsIconsBLK\XAMARIN logo.png" />
+    <Content Include="images\jsImages\AWS logo.png" />
     <Content Include="images\jsImages\AZURE logo.PNG" />
     <Content Include="images\jsImages\BLOG logo.PNG" />
     <Content Include="images\jsImages\BOOTSTRAP logo.png" />
@@ -196,6 +197,7 @@
     <Content Include="images\jsImages\GITHUB logo.PNG" />
     <Content Include="images\jsImages\HTML5 logo.png" />
     <Content Include="images\jsImages\JOSH SCOTT logo.png" />
+    <Content Include="images\jsImages\joshscott banner.png" />
     <Content Include="images\jsImages\joshscott portfolio.png" />
     <Content Include="images\jsImages\JS logo.png" />
     <Content Include="images\jsImages\SQL logo.png" />
