@@ -100,7 +100,7 @@
                 </header>
 
                 <a href="#" class="image featured"></a>
-                
+
                 <hr />
                 <p>
                     Born in Japan, American Citizen. Software Developer.
@@ -702,32 +702,12 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Custom Form JavaScript for Contact form -->
-    <script>
-        const btn = document.getElementById('contact-submit');
+    <!-- Sweet Alert JS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-        document.querySelector("form")
-            .addEventListener('submit', function (event) {
-                event.preventDefault();
+    <!-- Main JS File -->
+    <script src="Scripts/main.js"></script>
+    <script src="Scripts/my_js.js"></script>
 
-                btn.value = 'Sending...';
-
-                const serviceID = 'default_service';
-                const templateID = 'template_4vt1m1h';
-
-                emailjs.sendForm(serviceID, templateID, this)
-                    .then(() => {
-                        btn.value = 'Send Email';
-                        Swal.fire(
-                            'Good News!',
-                            'Your email has been sent.',
-                            'success'
-                        )
-                    }, (err) => {
-                        btn.value = 'Send Email';
-                        alert(JSON.stringify(err));
-                    });
-            });
-    </script>
 </body>
 </html>
